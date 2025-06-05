@@ -3,23 +3,23 @@
 {% block title %}Email Summarizer{% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-6">
+<div class="row g-4">
+    <div class="col-md-7">
         <h2 class="mb-4">Email Summaries</h2>
         {% for summary in summaries %}
-            <div class="card mb-3 shadow-sm">
+            <div class="card email-card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ summary.subject }}</h5>
+                    <h5 class="card-title mb-3">{{ summary.subject }}</h5>
                     <p class="card-text">{{ summary.summary }}</p>
                 </div>
             </div>
         {% endfor %}
     </div>
-    <div class="col-md-6">
-        <h2 class="mb-4 text-center">Google Calendar</h2>
-        <div class="card shadow-sm">
+    <div class="col-md-5">
+        <h2 class="mb-4 text-center">Calendar Events</h2>
+        <div class="card calendar-card">
             <div class="card-body">
-                <h5 class="text-center">{{ month }}</h5>
+                <h5 class="text-center mb-4" style="color: #1a1a1a;">{{ month }}</h5>
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>

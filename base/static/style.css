@@ -1,89 +1,169 @@
+/* Modern UI Theme */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --success-color: #059669;
+  --background-color: #1a1a1a;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+}
+
 body {
-    background: url('https://images.unsplash.com/photo-1600585154340') no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg') no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
-    color: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-primary);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
 }
 
 .navbar {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(17, 24, 39, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
 }
 
 .card {
-    border: none;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    color: #000;
-    transition: transform 0.3s ease;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.2);
 }
 
 .auth-form {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.auth-form .auth-form p {
-    margin-top: 1.5rem;
+    max-width: 450px;
+    margin: 2rem auto;
 }
 
 .auth-form .form-control {
-    border-radius: 25px;
-    padding: 10px 20px;
-    border: 1px solid #ced4da;
-    transition: border-color 0.3s ease;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
 }
 
 .auth-form .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
-.auth-form .btn {
-    border-radius: 25px;
-    padding: 10px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+.btn {
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    transition: all 0.3s ease;
 }
 
-.auth-form .btn-primary {
-    background-color: #007bff;
+.btn-primary {
+    background-color: var(--primary-color);
     border: none;
 }
 
-.auth-form .btn-primary:hover {
-    background-color: #0056b3;
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-1px);
 }
 
-.auth-form .btn-success {
-    background-color: #28a745;
+.btn-success {
+    background-color: var(--success-color);
     border: none;
 }
 
-.auth-form .btn-success:hover {
-    background-color: #1e7e34;
+.btn-success:hover {
+    background-color: #047857;
+    transform: translateY(-1px);
 }
 
-.text-center a {
-    color: #007bff;
-    text-decoration: none;
+.display-4 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
 }
 
-.text-center a:hover {
-    text-decoration: underline;
+.lead {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    line-height: 1.75;
 }
 
-h1,.display-4, h2, h5 {
-    color: #ffffff;
+/* Email Summarizer Specific Styles */
+.email-card {
+    margin-bottom: 1.5rem;
 }
 
-p.lead {
-    color: #d1d1d1;
+.email-card .card-title {
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.email-card .card-text {
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.calendar-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
 }
 
 .table {
-    background-color: #fff;
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 600;
+    color: #1a1a1a;
+    padding: 1rem;
+}
+
+.table td {
+    color: #4b5563;
+    padding: 1rem;
+}
+
+.table td.bg-primary {
+    background-color: var(--primary-color) !important;
+    color: white;
+    font-weight: 500;
+}
+
+.alert {
+    border-radius: 0.75rem;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+.alert-success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.alert-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
 }
